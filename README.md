@@ -1,0 +1,1 @@
+# smart_prodcut_intelligence_capstone
