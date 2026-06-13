@@ -1,0 +1,241 @@
+product_id,question,answer_type,support_rate,answer
+B00R1TAN7I,Does this product work well?,grounded_rag,0.5897435897435898,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: I liked the brush, it does the job.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: I liked the brush, it does the job.
+[2] rating 5.0: Does an amazing job, and doesn't pull or tear the hair, like plastic-bristle brushes do. Glad I bought it.
+[3] rating 2.0: I ordered this brush because I've been hearing how boar bristles are the best for your hair. But this brush didn't work for my hair at all- didn't go through wet or dry hair, wasn't useful as a brush at all. I may try a ..."
+B00R1TAN7I,Does this product work well?,ungrounded_template,0.38235294117647056,"GranNaturals Boar Bristle Smoothing Hair Brush for Women and Men - Medium/Soft Bristles - Natural Wooden Large Flat Square Paddle Hairbrush for Fine, Thin, Straight, Long, or Short Hair is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B00R1TAN7I,Are buyers happy with the smell or texture?,grounded_rag,0.6097560975609756,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 1; neutral/mid: 1. The strongest matching review says: This has a strong chemical smell. My dog sniffed it. She backed up and growled at it!. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 1.0: This has a strong chemical smell. My dog sniffed it. She backed up and growled at it!
+[2] rating 4.0: It's a hairbrush that's made out of hair. Holy moly! Want to know what it's like to brush your hair with hair? Well buddy boy have I got a brush for you, it's this one! Its hair that the fine people at GranNaturals cleve...
+[3] rating 5.0: I wanted a hair brush that ripped out less hair when I used it. This thing is very gentle on my hair and I love it."
+B00R1TAN7I,Are buyers happy with the smell or texture?,ungrounded_template,0.20588235294117646,"GranNaturals Boar Bristle Smoothing Hair Brush for Women and Men - Medium/Soft Bristles - Natural Wooden Large Flat Square Paddle Hairbrush for Fine, Thin, Straight, Long, or Short Hair is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B00R1TAN7I,Is the product easy to use?,grounded_rag,0.711864406779661,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: Overall good brush for the purpose. It is big.Really big be aware of dimensions if you are accostomed to a particular brush body. The bristles are very short and do not &#34;give&#34; or conform when you use it. For my use they could have b. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 4.0: Overall good brush for the purpose. It is big.Really big be aware of dimensions if you are accostomed to a particular brush body. The bristles are very short and do not &#34;give&#34; or conform when you use it. For my u...
+[2] rating 5.0: I bought this brush because it was inexpensive and there was a buy one get one free promotion at the time. I honestly didn't expect much, but I always come to Amazon.com to get the best bargain for what I want, and am ne...
+[3] rating 1.0: This product is a very poor choice for keeping brats in line. After only two solid minutes of swatting my 21 year old boy's behind, this product split right in two. Made it even worse when he started laughing. Look elsew..."
+B00R1TAN7I,Is the product easy to use?,ungrounded_template,0.17647058823529413,"GranNaturals Boar Bristle Smoothing Hair Brush for Women and Men - Medium/Soft Bristles - Natural Wooden Large Flat Square Paddle Hairbrush for Fine, Thin, Straight, Long, or Short Hair is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B00R1TAN7I,Are there complaints about quality or packaging?,grounded_rag,0.5897435897435898,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: I bought this brush because it was inexpensive and there was a buy one get one free promotion at the time. I honestly didn't expect much, but I always come to Amazon.com to get the best bargain for what I want, and am never let down by qual. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: I bought this brush because it was inexpensive and there was a buy one get one free promotion at the time. I honestly didn't expect much, but I always come to Amazon.com to get the best bargain for what I want, and am ne...
+[2] rating 5.0: This is a Quality Brush at a great Price----&#62; Thank You.
+[3] rating 5.0: I bought this for my husband and he likes it. He assumed it was an expensive brush based on the quality."
+B00R1TAN7I,Are there complaints about quality or packaging?,ungrounded_template,0.14705882352941177,"GranNaturals Boar Bristle Smoothing Hair Brush for Women and Men - Medium/Soft Bristles - Natural Wooden Large Flat Square Paddle Hairbrush for Fine, Thin, Straight, Long, or Short Hair is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B00R1TAN7I,Would buyers recommend it?,grounded_rag,0.5714285714285714,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: The handle is unfinished, the bristles are short, it’s unattractive, I felt misled by the photo. I certainly do not recommend this product.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 1.0: The handle is unfinished, the bristles are short, it’s unattractive, I felt misled by the photo. I certainly do not recommend this product.
+[2] rating 1.0: This has a strong chemical smell. My dog sniffed it. She backed up and growled at it!
+[3] rating 5.0: good brush"
+B00R1TAN7I,Would buyers recommend it?,ungrounded_template,0.11764705882352941,"GranNaturals Boar Bristle Smoothing Hair Brush for Women and Men - Medium/Soft Bristles - Natural Wooden Large Flat Square Paddle Hairbrush for Fine, Thin, Straight, Long, or Short Hair is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B07C533XCW,Does this product work well?,grounded_rag,0.627906976744186,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: if you have very curly hair. And you like to add extra moisture to it. This spray bottle does the trick. Might get more than one.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: if you have very curly hair. And you like to add extra moisture to it. This spray bottle does the trick. Might get more than one.
+[2] rating 4.0: At first the bottle use to make this sound when I spray but after the week ended it stop now it work just fine now
+[3] rating 5.0: I like this product. My only suggestion would be to add a grip to the portion if the bottle where the hand holds. I find it a bit slippery when applying product to my hair and have to go back and forth with spraying my h..."
+B07C533XCW,Does this product work well?,ungrounded_template,0.13333333333333333,"Segbeauty empty bottle 160083 is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B07C533XCW,Are buyers happy with the smell or texture?,grounded_rag,0.6595744680851063,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: This is the just the spray bottle I needed. I don't know why I took so long to make this purchase.. It has been a savior to my natural hair. Very happy with this purchase. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: This is the just the spray bottle I needed. I don't know why I took so long to make this purchase.. It has been a savior to my natural hair. Very happy with this purchase
+[2] rating 5.0: I saw this at my hairdressers and was so happy to have found it. And the price was right. I have super curly hair and need lots of water when styling. Pumping a few times vs a few dozen times is great. The most is fine a...
+[3] rating 5.0: Love this so much I’ve ordered a total of 3. Great product. Very fine spray."
+B07C533XCW,Are buyers happy with the smell or texture?,ungrounded_template,0.13333333333333333,"Segbeauty empty bottle 160083 is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B07C533XCW,Is the product easy to use?,grounded_rag,0.6190476190476191,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: This most is unreal! The spray is continuous and everythime I use it my husband asks “are there batteries in that?” Because the spray is so long!. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: This most is unreal! The spray is continuous and everythime I use it my husband asks “are there batteries in that?” Because the spray is so long!
+[2] rating 5.0: These bottles are fantastic. I use them to mist my plants. I have the black ones, they're really cool looking. Nicely made.
+[3] rating 5.0: Too big for travel but I use it every day at home. Great to restore curly hair when filled with water."
+B07C533XCW,Is the product easy to use?,ungrounded_template,0.06666666666666667,"Segbeauty empty bottle 160083 is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B07C533XCW,Are there complaints about quality or packaging?,grounded_rag,0.6521739130434783,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: Nice continuous mist. Good quality.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Nice continuous mist. Good quality.
+[2] rating 5.0: Amazing for hair and for watering plants or keeping them hydrated all over very good quality continuous spray
+[3] rating 5.0: I tested and do like the product, I plan to use is while traveling and won't have access to an iron or steamer. I sprayed the fine mist on a t-shirt and used the blow dryer to remove the wrinkles with the heat. It worked..."
+B07C533XCW,Are there complaints about quality or packaging?,ungrounded_template,0.13333333333333333,"Segbeauty empty bottle 160083 is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B07C533XCW,Would buyers recommend it?,grounded_rag,0.6190476190476191,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: Pricey for a spray bottle.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Pricey for a spray bottle.
+[2] rating 5.0: Nice continuous mist. Good quality.
+[3] rating 5.0: I tested and do like the product, I plan to use is while traveling and won't have access to an iron or steamer. I sprayed the fine mist on a t-shirt and used the blow dryer to remove the wrinkles with the heat. It worked..."
+B07C533XCW,Would buyers recommend it?,ungrounded_template,0.13333333333333333,"Segbeauty empty bottle 160083 is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B085BB7B1M,Does this product work well?,grounded_rag,0.7358490566037735,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: Very nice to have 3 to share with a family member or keep for a backup. Its very rough at first if you've never used one before. You do get used to it and it does soften a little overtime. I like the size and enjoy using it to exfoliate the. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 4.0: Very nice to have 3 to share with a family member or keep for a backup. Its very rough at first if you've never used one before. You do get used to it and it does soften a little overtime. I like the size and enjoy using...
+[2] rating 5.0: Best product ever! I never take a shower without them. They are a staple in my beauty routine. Makes your skin super soft!
+[3] rating 5.0: These are the best scrub towels EVER!! You feel 7.34 years younger just using it for one shower. After two you are practically 10 years younger!....but seriously, these are a great product. They shipped out quickly and w..."
+B085BB7B1M,Does this product work well?,ungrounded_template,0.3333333333333333,"Salux Nylon Japanese Beauty Skin Bath Wash Cloth/towel (3) Blue Yellow and Pink is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B085BB7B1M,Are buyers happy with the smell or texture?,grounded_rag,0.6875,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: These are the best things I have ever had the pleasure of cleaning my body with. Just the perfect size. Easy to use on my back. They absorb and lather soap VERY efficiently, you will save money if that is the intent. The texture is just gre. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: These are the best things I have ever had the pleasure of cleaning my body with. Just the perfect size. Easy to use on my back. They absorb and lather soap VERY efficiently, you will save money if that is the intent. The...
+[2] rating 4.0: Very nice to have 3 to share with a family member or keep for a backup. Its very rough at first if you've never used one before. You do get used to it and it does soften a little overtime. I like the size and enjoy using...
+[3] rating 5.0: Body wash"
+B085BB7B1M,Are buyers happy with the smell or texture?,ungrounded_template,0.20833333333333334,"Salux Nylon Japanese Beauty Skin Bath Wash Cloth/towel (3) Blue Yellow and Pink is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B085BB7B1M,Is the product easy to use?,grounded_rag,0.7192982456140351,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: These are the best things I have ever had the pleasure of cleaning my body with. Just the perfect size. Easy to use on my back. They absorb and lather soap VERY efficiently, you will save money if that is the intent. The texture is just gre. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: These are the best things I have ever had the pleasure of cleaning my body with. Just the perfect size. Easy to use on my back. They absorb and lather soap VERY efficiently, you will save money if that is the intent. The...
+[2] rating 5.0: These are just great, you only have to use a little bit of liquid cleanser and lots of suds. Great for sloughing off dry skin. Give them as gifts frequently and everyone loves them. Machine washable.
+[3] rating 5.0: Awesome flesh tearing abrasion to remove dead skin. Only can use it every other day, or else I just get raw. But it exfoliates like no other loofah can do. Skin is baby soft."
+B085BB7B1M,Is the product easy to use?,ungrounded_template,0.16666666666666666,"Salux Nylon Japanese Beauty Skin Bath Wash Cloth/towel (3) Blue Yellow and Pink is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B085BB7B1M,Are there complaints about quality or packaging?,grounded_rag,0.68,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: Body wash. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Body wash
+[2] rating 1.0: La calidad bajo demasiado, lo que mi previa trapo/toalla me 3 meses, esta tiene 1 semana y ya ocupa reemplazo por desgaste. No compraría de nuevo.
+[3] rating 1.0: there is a definite difference between this and the Salux I've bought in the past. Not nearly as exfoliating. The brand new one feels like an old one thats been thrown in the washing machine a dozen times. In fact, my ol..."
+B085BB7B1M,Are there complaints about quality or packaging?,ungrounded_template,0.125,"Salux Nylon Japanese Beauty Skin Bath Wash Cloth/towel (3) Blue Yellow and Pink is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B085BB7B1M,Would buyers recommend it?,grounded_rag,0.6666666666666666,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: Perfect exfoliating towels! Loofah no more! These towels exfoliate so well. My skin was noticeably smoother after using this once! If you aren't used to it, it can hurt a bit at first. But once you get used to it, you'll know how hard to sc. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Perfect exfoliating towels! Loofah no more! These towels exfoliate so well. My skin was noticeably smoother after using this once! If you aren't used to it, it can hurt a bit at first. But once you get used to it, you'll...
+[2] rating 5.0: Body wash
+[3] rating 4.0: Very nice to have 3 to share with a family member or keep for a backup. Its very rough at first if you've never used one before. You do get used to it and it does soften a little overtime. I like the size and enjoy using..."
+B085BB7B1M,Would buyers recommend it?,ungrounded_template,0.20833333333333334,"Salux Nylon Japanese Beauty Skin Bath Wash Cloth/towel (3) Blue Yellow and Pink is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B08L5KN7X4,Does this product work well?,grounded_rag,0.6444444444444445,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: I was surprised how well this worked. It also help take off some staining I had. Not sure it this work work for tarter build up though.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: I was surprised how well this worked. It also help take off some staining I had. Not sure it this work work for tarter build up though.
+[2] rating 1.0: I gave it a genuine try but I guess it doesnt work for people who daily brush and floss. I noticed no difference and was hoping for more out of this.
+[3] rating 1.0: Do not purchase this product unless you like visiting the ups store. This product could be used to get chewing gum off a surface in a very shrewd way and that's about it."
+B08L5KN7X4,Does this product work well?,ungrounded_template,0.14285714285714285,"Meeteasy Dental Cleaner Tool Kit - Dental Care for Adult - 100% Proven Safe is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B08L5KN7X4,Are buyers happy with the smell or texture?,grounded_rag,0.6730769230769231,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: I'm not going to upload photos.. but I can say that this thing is awesome. I spent many years in an abusive marriage, and that caused me to neglect my personal health, including dental hygiene. I've been looking for over a year for somethin. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: I'm not going to upload photos.. but I can say that this thing is awesome. I spent many years in an abusive marriage, and that caused me to neglect my personal health, including dental hygiene. I've been looking for over...
+[2] rating 1.0: Do not purchase this product unless you like visiting the ups store. This product could be used to get chewing gum off a surface in a very shrewd way and that's about it.
+[3] rating 5.0: Great product to keep that just went to the dentist feeling,highly recommended"
+B08L5KN7X4,Are buyers happy with the smell or texture?,ungrounded_template,0.14285714285714285,"Meeteasy Dental Cleaner Tool Kit - Dental Care for Adult - 100% Proven Safe is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B08L5KN7X4,Is the product easy to use?,grounded_rag,0.4482758620689655,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: A very effective product, very easy to use. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: A very effective product, very easy to use
+[2] rating 5.0: A great product and easy to use! Highly recommended for dental cleaning.
+[3] rating 5.0: Product came pre-charged so I could use right away. Overall very easy to use."
+B08L5KN7X4,Is the product easy to use?,ungrounded_template,0.23809523809523808,"Meeteasy Dental Cleaner Tool Kit - Dental Care for Adult - 100% Proven Safe is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B08L5KN7X4,Are there complaints about quality or packaging?,grounded_rag,0.68,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: Do not purchase this product unless you like visiting the ups store. This product could be used to get chewing gum off a surface in a very shrewd way and that's about it.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 1.0: Do not purchase this product unless you like visiting the ups store. This product could be used to get chewing gum off a surface in a very shrewd way and that's about it.
+[2] rating 5.0: I'm not going to upload photos.. but I can say that this thing is awesome. I spent many years in an abusive marriage, and that caused me to neglect my personal health, including dental hygiene. I've been looking for over...
+[3] rating 5.0: Great product to keep that just went to the dentist feeling,highly recommended"
+B08L5KN7X4,Are there complaints about quality or packaging?,ungrounded_template,0.14285714285714285,"Meeteasy Dental Cleaner Tool Kit - Dental Care for Adult - 100% Proven Safe is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B08L5KN7X4,Would buyers recommend it?,grounded_rag,0.5151515151515151,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: Will recommend to anyone..... I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Will recommend to anyone....
+[2] rating 1.0: Do not purchase this product unless you like visiting the ups store. This product could be used to get chewing gum off a surface in a very shrewd way and that's about it.
+[3] rating 5.0: Product came pre-charged so I could use right away. Overall very easy to use."
+B08L5KN7X4,Would buyers recommend it?,ungrounded_template,0.09523809523809523,"Meeteasy Dental Cleaner Tool Kit - Dental Care for Adult - 100% Proven Safe is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0C9CWKY9G,Does this product work well?,grounded_rag,0.1111111111111111,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: . I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: 
+[2] rating 5.0: 
+[3] rating 5.0: Good item"
+B0C9CWKY9G,Does this product work well?,ungrounded_template,0.0,"Picoway 20 Pack Mouse Ears Solid Black and Red Bow Headband is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0C9CWKY9G,Are buyers happy with the smell or texture?,grounded_rag,0.5294117647058824,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: This is a good purchase very happy with. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: This is a good purchase very happy with
+[2] rating 5.0: Great for birthday party
+[3] rating 5.0: There had bands are great! Everyone got to have one as an active party favor to wear! They band didn’t give anyone head aches after shearing them a while and we all looked great toddlers and adults!"
+B0C9CWKY9G,Are buyers happy with the smell or texture?,ungrounded_template,0.0,"Picoway 20 Pack Mouse Ears Solid Black and Red Bow Headband is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0C9CWKY9G,Is the product easy to use?,grounded_rag,0.1111111111111111,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: . I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: 
+[2] rating 5.0: 
+[3] rating 5.0: Good item"
+B0C9CWKY9G,Is the product easy to use?,ungrounded_template,0.0,"Picoway 20 Pack Mouse Ears Solid Black and Red Bow Headband is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0C9CWKY9G,Are there complaints about quality or packaging?,grounded_rag,0.4482758620689655,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 0; neutral/mid: 1. The strongest matching review says: Every one love them , high quality looking. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Every one love them , high quality looking
+[2] rating 5.0: Was a hit with the kids and adults good quality
+[3] rating 5.0: Very comfortable. Much softer and nicer quality than I expected. Kids at B-day party loved them."
+B0C9CWKY9G,Are there complaints about quality or packaging?,ungrounded_template,0.0,"Picoway 20 Pack Mouse Ears Solid Black and Red Bow Headband is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0C9CWKY9G,Would buyers recommend it?,grounded_rag,0.5675675675675675,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: Great for birthday party. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Great for birthday party
+[2] rating 5.0: There had bands are great! Everyone got to have one as an active party favor to wear! They band didn’t give anyone head aches after shearing them a while and we all looked great toddlers and adults!
+[3] rating 5.0: These qere so cute. Such a good deal when I bought them. Everyone loved them!"
+B0C9CWKY9G,Would buyers recommend it?,ungrounded_template,0.0,"Picoway 20 Pack Mouse Ears Solid Black and Red Bow Headband is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0107QYW14,Does this product work well?,grounded_rag,0.5555555555555556,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: Stone does not match the necklace. Otherwise it would have been a great buy.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 2.0: Stone does not match the necklace. Otherwise it would have been a great buy.
+[2] rating 4.0: When I saw this I had to have it...but the cheap price worried me. Boy am I glad I got it! It's beautiful and perfect! The 2&#34; extension chain is a bit flimsy and it could break over time, but if it does I will just u...
+[3] rating 1.0: Visually very attractive product"
+B0107QYW14,Does this product work well?,ungrounded_template,0.09090909090909091,"Harlorki Women's Bohemian Jewelry Statement Necklaces Women Rhinestone Gem Pendant Collar is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0107QYW14,Are buyers happy with the smell or texture?,grounded_rag,0.30434782608695654,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: Pretty. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Pretty
+[2] rating 5.0: Very good!
+[3] rating 5.0: I just love it. The picture didn't do it justice"
+B0107QYW14,Are buyers happy with the smell or texture?,ungrounded_template,0.0,"Harlorki Women's Bohemian Jewelry Statement Necklaces Women Rhinestone Gem Pendant Collar is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0107QYW14,Is the product easy to use?,grounded_rag,0.5555555555555556,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: I am surprised by how nice this piece is. It appears to be well made. I will get a lot of use from this.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 4.0: I am surprised by how nice this piece is. It appears to be well made. I will get a lot of use from this.
+[2] rating 4.0: When I saw this I had to have it...but the cheap price worried me. Boy am I glad I got it! It's beautiful and perfect! The 2&#34; extension chain is a bit flimsy and it could break over time, but if it does I will just u...
+[3] rating 1.0: Visually very attractive product"
+B0107QYW14,Is the product easy to use?,ungrounded_template,0.09090909090909091,"Harlorki Women's Bohemian Jewelry Statement Necklaces Women Rhinestone Gem Pendant Collar is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0107QYW14,Are there complaints about quality or packaging?,grounded_rag,0.5428571428571428,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: Looks very different but classy. Good quality and my wife loves it.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Looks very different but classy. Good quality and my wife loves it.
+[2] rating 2.0: Pretty but poor quality. Broke the first time I used it.
+[3] rating 5.0: Very cool and large necklace. I couldn't believe how much bigger it was and the quality is top notch."
+B0107QYW14,Are there complaints about quality or packaging?,ungrounded_template,0.0,"Harlorki Women's Bohemian Jewelry Statement Necklaces Women Rhinestone Gem Pendant Collar is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B0107QYW14,Would buyers recommend it?,grounded_rag,0.30434782608695654,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: Pretty. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Pretty
+[2] rating 5.0: Very good!
+[3] rating 5.0: I just love it. The picture didn't do it justice"
+B0107QYW14,Would buyers recommend it?,ungrounded_template,0.0,"Harlorki Women's Bohemian Jewelry Statement Necklaces Women Rhinestone Gem Pendant Collar is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B09LHS6RGF,Does this product work well?,grounded_rag,0.6923076923076923,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: This head does not curl and when you try to test it the fumes that generate are horrible. Not a good mannequin for state board or to practice with.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 1.0: This head does not curl and when you try to test it the fumes that generate are horrible. Not a good mannequin for state board or to practice with.
+[2] rating 5.0: The product was on time in my daughter loves it
+[3] rating 4.0: Sheds quite a hit but great for beginners. Real hair so van color perm relax add heat ... whatever. Just very uneven so if looking for sleek looks need lots product. But as for practice, she's perfect, coarse density not..."
+B09LHS6RGF,Does this product work well?,ungrounded_template,0.2,"Hairginkgo Mannequin Head 100% Real Hair Manikin Head Styling Hairdresser Training Head Cosmetology Doll Head for Dyeing Cutting Braiding Practice with Clamp Stand (2022B0214) is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B09LHS6RGF,Are buyers happy with the smell or texture?,grounded_rag,0.7222222222222222,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: Buy it y’all! It's great for beginners and people you want to start braiding for a hobby. The hair is pretty soft it's like a 4b/4x texture. You can wash it, blow-dry, dye, press, braid, and so much more.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Buy it y’all! It's great for beginners and people you want to start braiding for a hobby. The hair is pretty soft it's like a 4b/4x texture. You can wash it, blow-dry, dye, press, braid, and so much more.
+[2] rating 5.0: This was a gift. The person I gave it to loved it. The hair is very thick yet easy to braid and style. It arrived with a slight “plastic” smell. No worries, the head is made of plastic. After shampoo and conditioner, it ...
+[3] rating 4.0: My only complaint is, there was a of missing to attach the mannequin head to the stand. Other than that pretty good quality for the price."
+B09LHS6RGF,Are buyers happy with the smell or texture?,ungrounded_template,0.26666666666666666,"Hairginkgo Mannequin Head 100% Real Hair Manikin Head Styling Hairdresser Training Head Cosmetology Doll Head for Dyeing Cutting Braiding Practice with Clamp Stand (2022B0214) is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B09LHS6RGF,Is the product easy to use?,grounded_rag,0.6808510638297872,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: This was a gift. The person I gave it to loved it. The hair is very thick yet easy to braid and style. It arrived with a slight “plastic” smell. No worries, the head is made of plastic. After shampoo and conditioner, it smelled great. The t. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: This was a gift. The person I gave it to loved it. The hair is very thick yet easy to braid and style. It arrived with a slight “plastic” smell. No worries, the head is made of plastic. After shampoo and conditioner, it ...
+[2] rating 5.0: Works great , perfect condition ! I do recommend you wash the hair before use, hair was a little flaky . Fast shipment .
+[3] rating 5.0: The product was on time in my daughter loves it"
+B09LHS6RGF,Is the product easy to use?,ungrounded_template,0.23333333333333334,"Hairginkgo Mannequin Head 100% Real Hair Manikin Head Styling Hairdresser Training Head Cosmetology Doll Head for Dyeing Cutting Braiding Practice with Clamp Stand (2022B0214) is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B09LHS6RGF,Are there complaints about quality or packaging?,grounded_rag,0.6666666666666666,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 3; negative mentions: 2; neutral/mid: 0. The strongest matching review says: photo misleading was not afro hair that I needed, but head itself and hair good quality. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 1.0: photo misleading was not afro hair that I needed, but head itself and hair good quality
+[2] rating 4.0: My only complaint is, there was a of missing to attach the mannequin head to the stand. Other than that pretty good quality for the price.
+[3] rating 5.0: This was a gift. The person I gave it to loved it. The hair is very thick yet easy to braid and style. It arrived with a slight “plastic” smell. No worries, the head is made of plastic. After shampoo and conditioner, it ..."
+B09LHS6RGF,Are there complaints about quality or packaging?,ungrounded_template,0.26666666666666666,"Hairginkgo Mannequin Head 100% Real Hair Manikin Head Styling Hairdresser Training Head Cosmetology Doll Head for Dyeing Cutting Braiding Practice with Clamp Stand (2022B0214) is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B09LHS6RGF,Would buyers recommend it?,grounded_rag,0.6739130434782609,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 1; neutral/mid: 0. The strongest matching review says: Works great , perfect condition ! I do recommend you wash the hair before use, hair was a little flaky . Fast shipment .. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Works great , perfect condition ! I do recommend you wash the hair before use, hair was a little flaky . Fast shipment .
+[2] rating 5.0: This was a gift. The person I gave it to loved it. The hair is very thick yet easy to braid and style. It arrived with a slight “plastic” smell. No worries, the head is made of plastic. After shampoo and conditioner, it ...
+[3] rating 5.0: The product was on time in my daughter loves it"
+B09LHS6RGF,Would buyers recommend it?,ungrounded_template,0.23333333333333334,"Hairginkgo Mannequin Head 100% Real Hair Manikin Head Styling Hairdresser Training Head Cosmetology Doll Head for Dyeing Cutting Braiding Practice with Clamp Stand (2022B0214) is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B005BZQHEC,Does this product work well?,grounded_rag,0.675,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 4; negative mentions: 0; neutral/mid: 1. The strongest matching review says: I just got my GG balm in the mail today, which is actually a day sooner than it was expected to arrive. BIG PLUS!! I haven't used it yet, so I can't say how well it works but, i can say that I've used EVERYTHING for my ears during and after. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: I just got my GG balm in the mail today, which is actually a day sooner than it was expected to arrive. BIG PLUS!! I haven't used it yet, so I can't say how well it works but, i can say that I've used EVERYTHING for my e...
+[2] rating 4.0: Seems to work pretty well. Overall I'm happy with the product!
+[3] rating 5.0: These work really well I'm so happy I got these. When I used them to stretch my ears it wasn't so painful and it went right through."
+B005BZQHEC,Does this product work well?,ungrounded_template,0.18518518518518517,"Gauge Gear Ear Stretching Balm | 10 ml Jar | Piercing Aftercare | Stretched or Damaged Skin Care | All Natural Moisturizing Salve w/Jojoba is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B005BZQHEC,Are buyers happy with the smell or texture?,grounded_rag,0.5151515151515151,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: Seems to work pretty well. Overall I'm happy with the product!. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 4.0: Seems to work pretty well. Overall I'm happy with the product!
+[2] rating 5.0: These work really well I'm so happy I got these. When I used them to stretch my ears it wasn't so painful and it went right through.
+[3] rating 4.0: Didn't smell funny. And my ears didn't split"
+B005BZQHEC,Are buyers happy with the smell or texture?,ungrounded_template,0.1111111111111111,"Gauge Gear Ear Stretching Balm | 10 ml Jar | Piercing Aftercare | Stretched or Damaged Skin Care | All Natural Moisturizing Salve w/Jojoba is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B005BZQHEC,Is the product easy to use?,grounded_rag,0.717391304347826,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: It's a good product. It helps stretching easy and the smell is pleasing if you know what I mean ;). I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 4.0: It's a good product. It helps stretching easy and the smell is pleasing if you know what I mean ;)
+[2] rating 5.0: I just got my GG balm in the mail today, which is actually a day sooner than it was expected to arrive. BIG PLUS!! I haven't used it yet, so I can't say how well it works but, i can say that I've used EVERYTHING for my e...
+[3] rating 5.0: This stuff is AMAZING. I am in LOVE. I will never again gauge my ears without this. At first I thought, &#34;Why buy this one? There are much cheaper types out there.&#34; (I know this isn't expensive but c'mon, we're al..."
+B005BZQHEC,Is the product easy to use?,ungrounded_template,0.25925925925925924,"Gauge Gear Ear Stretching Balm | 10 ml Jar | Piercing Aftercare | Stretched or Damaged Skin Care | All Natural Moisturizing Salve w/Jojoba is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B005BZQHEC,Are there complaints about quality or packaging?,grounded_rag,0.6,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: This stuff is AMAZING. I am in LOVE. I will never again gauge my ears without this. At first I thought, &#34;Why buy this one? There are much cheaper types out there.&#34; (I know this isn't expensive but c'mon, we're all looking for a barg. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: This stuff is AMAZING. I am in LOVE. I will never again gauge my ears without this. At first I thought, &#34;Why buy this one? There are much cheaper types out there.&#34; (I know this isn't expensive but c'mon, we're al...
+[2] rating 5.0: I have used this product and streached my ears to a zero guage with no problems. My ears lobes are not thin and sickly looking.
+[3] rating 4.0: Seems to work pretty well. Overall I'm happy with the product!"
+B005BZQHEC,Are there complaints about quality or packaging?,ungrounded_template,0.25925925925925924,"Gauge Gear Ear Stretching Balm | 10 ml Jar | Piercing Aftercare | Stretched or Damaged Skin Care | All Natural Moisturizing Salve w/Jojoba is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."
+B005BZQHEC,Would buyers recommend it?,grounded_rag,0.7,"Based on 5 retrieved reviews, the evidence is mostly positive. Positive mentions: 5; negative mentions: 0; neutral/mid: 0. The strongest matching review says: Was exactly what I ordered. I had used this product before and its amazing! Very good for soothing skin after ears are stretched. I definitely recommend this product.. I would treat this as grounded only in the retrieved review snippets below.
+
+[1] rating 5.0: Was exactly what I ordered. I had used this product before and its amazing! Very good for soothing skin after ears are stretched. I definitely recommend this product.
+[2] rating 5.0: This has worked even better than I expected. The taper slipped right in with very minimal pain. Since I got the larger gauge in so easily, it significantly reduced any swelling that one might expect. I have even used thi...
+[3] rating 5.0: This stuff is AMAZING. I am in LOVE. I will never again gauge my ears without this. At first I thought, &#34;Why buy this one? There are much cheaper types out there.&#34; (I know this isn't expensive but c'mon, we're al..."
+B005BZQHEC,Would buyers recommend it?,ungrounded_template,0.25925925925925924,"Gauge Gear Ear Stretching Balm | 10 ml Jar | Piercing Aftercare | Stretched or Damaged Skin Care | All Natural Moisturizing Salve w/Jojoba is likely a solid beauty product with pleasant performance and few issues. Most buyers probably find it easy to use, effective, and worth recommending."

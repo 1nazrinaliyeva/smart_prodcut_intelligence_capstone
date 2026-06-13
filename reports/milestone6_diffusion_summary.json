@@ -1,0 +1,26 @@
+{
+  "milestone": "Milestone 6 - Diffusion and Generative AI",
+  "model_id": "runwayml/stable-diffusion-v1-5",
+  "run_diffusion_setting": "auto",
+  "pipeline_status": {
+    "requested": false,
+    "loaded": false,
+    "reason": "not requested"
+  },
+  "num_demo_products": 3,
+  "num_generated_images": 0,
+  "prompt_report_path": "reports/milestone6_diffusion_prompts.csv",
+  "generated_image_manifest_path": "reports/milestone6_generated_image_manifest.csv",
+  "generated_image_dir": "reports/milestone6_generated_images",
+  "negative_prompt": "low quality, blurry, distorted product, deformed text, misspelled label, watermark, logo artifact, extra hands, cluttered background, unrealistic packaging, duplicate object",
+  "reflection": [
+    "This runtime skipped Stable Diffusion generation to keep the notebook reproducible without a GPU or downloaded model weights.",
+    "The prompt demo still shows the complete product-conditioned generation inputs and saves them for a GPU run.",
+    "Expected failure modes remain: text/logo artifacts, generic beauty packaging, distorted product shape, and lifestyle scenes that ignore the exact product form."
+  ],
+  "leakage_check": {
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0
+  }
+}

@@ -1,0 +1,19 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local environments
+.venv/
+notebooks/.venv/
+
+# Cached datasets, images, and trained artifacts
+data/
+models/
+
+# Generated notebook execution copies and logs
+notebooks/*_executed.ipynb
+reports/notebook_run_logs/
+
+# Build metadata
+*.egg-info/

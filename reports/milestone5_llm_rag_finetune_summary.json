@@ -1,0 +1,9 @@
+{
+  "summary_best_model": "fine_tuned_sentence_selector",
+  "summary_best_mean_token_f1": 0.5074527167691366,
+  "sentence_selector_macro_f1": 0.48722912779616906,
+  "rag_best_answer_type": "grounded_rag",
+  "rag_best_support_rate": 0.5843548598890373,
+  "rag_documents_indexed": 12000,
+  "notes": "Offline Milestone 5 implementation. The fine-tuned component is a supervised TF-IDF + logistic-regression sentence selector trained on review sentences. RAG answers are extractive and cite retrieved review evidence."
+}
