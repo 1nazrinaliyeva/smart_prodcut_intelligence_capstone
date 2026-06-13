@@ -71,18 +71,95 @@ def fallback_products() -> pd.DataFrame:
     return pd.DataFrame(
         [
             {
-                "product_id": "ARTIFACTS_MISSING",
-                "product_title": "Sample product placeholder - load Milestone 0 data for real products",
-                "store_name": "Not available",
-                "price_num": np.nan,
-                "average_rating": np.nan,
-                "rating_number": np.nan,
-                "review_count": np.nan,
-                "description": "Product-level parquet was not found. The demo shell is still shown so Milestone 7 can run without crashing.",
+                "product_id": "DEMO_SERUM_001",
+                "product_title": "Vitamin C Brightening Face Serum",
+                "store_name": "Demo Beauty Lab",
+                "price_num": 18.99,
+                "average_rating": 4.5,
+                "rating_number": 1284,
+                "review_count": 96,
+                "description": "Lightweight vitamin C serum for brighter-looking skin, uneven tone, and daily glow.",
+                "features": "vitamin c hyaluronic acid brightening serum skincare sensitive skin",
+                "main_category_clean": "All Beauty",
+                "cached_image_path": "reports/milestone6_generated_images/m6_prompt_demo_card.png",
+                "_is_placeholder": True,
+            },
+            {
+                "product_id": "DEMO_CREAM_002",
+                "product_title": "Hydrating Ceramide Face Cream",
+                "store_name": "Demo Beauty Lab",
+                "price_num": 15.49,
+                "average_rating": 4.3,
+                "rating_number": 842,
+                "review_count": 74,
+                "description": "Rich moisturizer with ceramides for dry skin, barrier support, and night-time hydration.",
+                "features": "ceramide moisturizer dry skin barrier cream fragrance free",
+                "main_category_clean": "All Beauty",
+                "cached_image_path": "reports/milestone6_generated_images/m6_prompt_demo_card.png",
+                "_is_placeholder": True,
+            },
+            {
+                "product_id": "DEMO_SHAMPOO_003",
+                "product_title": "Argan Oil Repair Shampoo",
+                "store_name": "Demo Hair Care",
+                "price_num": 12.99,
+                "average_rating": 4.1,
+                "rating_number": 653,
+                "review_count": 58,
+                "description": "Smoothing shampoo for dry or damaged hair with argan oil and a soft finish.",
+                "features": "argan oil shampoo hair repair dry damaged smoothing",
+                "main_category_clean": "All Beauty",
+                "cached_image_path": "reports/milestone6_generated_images/m6_prompt_demo_card.png",
+                "_is_placeholder": True,
+            },
+            {
+                "product_id": "DEMO_MASK_004",
+                "product_title": "Clay Pore Cleansing Mask",
+                "store_name": "Demo Skin Studio",
+                "price_num": 10.75,
+                "average_rating": 3.9,
+                "rating_number": 411,
+                "review_count": 43,
+                "description": "Wash-off clay mask for oily skin, shine control, and weekly pore cleansing.",
+                "features": "clay mask oily skin pore cleansing charcoal weekly treatment",
+                "main_category_clean": "All Beauty",
+                "cached_image_path": "reports/milestone6_generated_images/m6_prompt_demo_card.png",
+                "_is_placeholder": True,
+            },
+            {
+                "product_id": "DEMO_BALM_005",
+                "product_title": "Shea Butter Lip Balm Trio",
+                "store_name": "Demo Essentials",
+                "price_num": 7.99,
+                "average_rating": 4.7,
+                "rating_number": 2035,
+                "review_count": 121,
+                "description": "Three-pack lip balm with shea butter for daily moisture and travel-friendly use.",
+                "features": "shea butter lip balm hydrating travel pack daily moisture",
+                "main_category_clean": "All Beauty",
+                "cached_image_path": "reports/milestone6_generated_images/m6_prompt_demo_card.png",
                 "_is_placeholder": True,
             }
         ]
     )
+
+
+def fallback_reviews() -> pd.DataFrame:
+    rows = [
+        ("DEMO_SERUM_001", 5, "Absorbs quickly and makes my skin look brighter without feeling sticky."),
+        ("DEMO_SERUM_001", 4, "Good glow for the price, although I need moisturizer on top."),
+        ("DEMO_SERUM_001", 2, "The serum irritated my skin a little, so sensitive users should patch test."),
+        ("DEMO_CREAM_002", 5, "Very hydrating at night and helped with dry patches around my cheeks."),
+        ("DEMO_CREAM_002", 4, "Thick texture but comfortable once it settles."),
+        ("DEMO_CREAM_002", 2, "Too heavy for my oily T-zone during the day."),
+        ("DEMO_SHAMPOO_003", 4, "Hair felt softer after a few washes and the scent is pleasant."),
+        ("DEMO_SHAMPOO_003", 3, "It cleans well, but I still needed conditioner for frizz."),
+        ("DEMO_MASK_004", 4, "Nice weekly mask for shine control and my pores looked cleaner."),
+        ("DEMO_MASK_004", 2, "Can feel drying if left on too long."),
+        ("DEMO_BALM_005", 5, "Great value trio and keeps lips moisturized for hours."),
+        ("DEMO_BALM_005", 4, "Small tubes are easy to carry and the formula is smooth."),
+    ]
+    return pd.DataFrame(rows, columns=["product_id", "rating", "review_text"])
 
 
 def display_value(value, fallback: str = "Not available") -> str:
@@ -512,8 +589,10 @@ st.title("Smart Product Intelligence Demo")
 st.caption("Milestone 7 capstone demo for Amazon Reviews 2023 - All_Beauty")
 
 if products is None:
-    st.warning("Artifact not found: product-level parquet. Run Milestone 0 first. Showing a placeholder product so the demo UI remains runnable.")
+    st.warning("Artifact not found: product-level parquet. Run Milestone 0 first for real Amazon products. Showing built-in demo products so the app remains usable.")
     products = fallback_products()
+    if reviews is None:
+        reviews = fallback_reviews()
 
 selected_product = select_product(products)
 if selected_product is None:
