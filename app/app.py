@@ -1,97 +1,454 @@
 from __future__ import annotations
 
-import sys
 import os
+import re
+import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import streamlit as st
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 PROJECT_ROOT = Path(os.getenv("SMART_PRODUCT_PROJECT_ROOT", Path(__file__).resolve().parents[1]))
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
-
-from src.data import load_csv, load_parquet
-from src.models import artifact_status
-
 
 DATA_DIR = PROJECT_ROOT / "data"
 PROCESSED_DIR = Path(os.getenv("SMART_PRODUCT_PROCESSED_DIR", DATA_DIR / "processed"))
 REPORTS_DIR = Path(os.getenv("SMART_PRODUCT_REPORTS_DIR", PROJECT_ROOT / "reports"))
 MODELS_DIR = Path(os.getenv("SMART_PRODUCT_MODELS_DIR", PROJECT_ROOT / "models"))
 
+PRODUCT_LEVEL_CANDIDATES = [
+    PROCESSED_DIR / "product_level_with_split.parquet",
+    PROCESSED_DIR / "product_level.parquet",
+]
+REVIEW_LEVEL_PATH = PROCESSED_DIR / "review_level.parquet"
 
-st.set_page_config(page_title="Smart Product Intelligence", layout="wide")
-st.title("Smart Product Intelligence")
+TABULAR_MODEL_PATH = MODELS_DIR / "tabular_mlp.keras"
+TABULAR_PIPELINE_PATH = MODELS_DIR / "tabular_mlp_pipeline.joblib"
+TABULAR_LABEL_ENCODER_PATH = MODELS_DIR / "tabular_mlp_label_encoder.joblib"
+VISION_MODEL_CANDIDATES = [
+    MODELS_DIR / "small_cnn.keras",
+    MODELS_DIR / "vision_transfer.keras",
+    MODELS_DIR / "vision_mobilenet.keras",
+    MODELS_DIR / "vision_mobilenetv2_transfer.keras",
+    MODELS_DIR / "vision_transfer_head.keras",
+    MODELS_DIR / "vision_small_cnn.keras",
+]
+VISION_LABEL_ENCODER_PATH = MODELS_DIR / "vision_label_encoder.joblib"
+
+
+st.set_page_config(page_title="Smart Product Intelligence Demo", layout="wide")
+
+
+def first_existing(paths: list[Path]) -> Path | None:
+    return next((path for path in paths if path.exists()), None)
+
+
+def display_value(value, fallback: str = "Not available") -> str:
+    if pd.isna(value) or value == "":
+        return fallback
+    return str(value)
+
+
+def resolve_path(path_value) -> Path | None:
+    if pd.isna(path_value) or not str(path_value).strip():
+        return None
+    path = Path(str(path_value))
+    return path if path.is_absolute() else PROJECT_ROOT / path
+
+
+def product_text(row: pd.Series) -> str:
+    parts = []
+    for col in ["product_title", "description", "features", "details", "store_name", "main_category_clean"]:
+        if col in row.index and not pd.isna(row[col]):
+            parts.append(str(row[col]))
+    return " ".join(parts)
+
+
+def clean_snippet(text: str, max_len: int = 260) -> str:
+    text = re.sub(r"\s+", " ", str(text)).strip()
+    if len(text) <= max_len:
+        return text
+    return text[: max_len - 3].rstrip() + "..."
 
 
 @st.cache_data(show_spinner=False)
-def safe_csv(path: Path) -> pd.DataFrame | None:
-    try:
-        return load_csv(path)
-    except FileNotFoundError:
+def load_parquet_safe(path: Path) -> pd.DataFrame | None:
+    if not path.exists():
         return None
+    return pd.read_parquet(path)
 
 
 @st.cache_data(show_spinner=False)
-def safe_parquet(path: Path) -> pd.DataFrame | None:
-    try:
-        return load_parquet(path)
-    except FileNotFoundError:
+def load_csv_safe(path: Path) -> pd.DataFrame | None:
+    if not path.exists():
         return None
+    return pd.read_csv(path)
 
 
-product_test = safe_parquet(PROCESSED_DIR / "product_test.parquet")
-review_test = safe_parquet(PROCESSED_DIR / "test.parquet")
-tabular_metrics = safe_csv(REPORTS_DIR / "milestone1_tabular_mlp_metrics.csv")
-vision_metrics = safe_csv(REPORTS_DIR / "milestone2_vision_metrics.csv")
-transformer_metrics = safe_csv(REPORTS_DIR / "milestone4_transformer_metrics.csv")
-rag_metrics = safe_csv(REPORTS_DIR / "milestone5_rag_grounding_metrics.csv")
-diffusion_manifest = safe_csv(REPORTS_DIR / "milestone6_generated_image_manifest.csv")
+@st.cache_resource(show_spinner=False)
+def load_joblib_safe(path: Path):
+    if not path.exists():
+        return None
+    import joblib
 
-status = artifact_status(MODELS_DIR)
-cols = st.columns(4)
-for col, (name, exists) in zip(cols, status.items()):
-    col.metric(name.replace("_", " ").title(), "Ready" if exists else "Missing")
+    return joblib.load(path)
 
-st.divider()
 
-left, right = st.columns([1, 1])
-with left:
-    st.subheader("Data Snapshot")
-    if product_test is not None:
-        st.write(f"Test products: {len(product_test):,}")
-        st.dataframe(
-            product_test[["product_id", "product_title", "rating_band", "target_rating"]].head(20),
-            use_container_width=True,
-        )
-    else:
-        st.info("Run `notebooks/00_eda.ipynb` to create processed product splits.")
+@st.cache_resource(show_spinner=False)
+def load_keras_model_safe(path: Path):
+    if not path.exists():
+        return None
+    try:
+        import tensorflow as tf
 
-with right:
-    st.subheader("Review Snapshot")
-    if review_test is not None:
-        st.write(f"Test reviews: {len(review_test):,}")
-        st.dataframe(
-            review_test[["product_id", "title", "sentiment_label", "review_text"]].head(20),
-            use_container_width=True,
-        )
-    else:
-        st.info("Run `notebooks/00_eda.ipynb` to create processed review splits.")
+        return tf.keras.models.load_model(path)
+    except Exception as exc:
+        return exc
 
-st.divider()
-st.subheader("Milestone Metrics")
-tabs = st.tabs(["Tabular", "Vision", "Transformer", "RAG", "Diffusion"])
 
-for tab, label, frame in [
-    (tabs[0], "Milestone 1", tabular_metrics),
-    (tabs[1], "Milestone 2", vision_metrics),
-    (tabs[2], "Milestone 4", transformer_metrics),
-    (tabs[3], "Milestone 5", rag_metrics),
-    (tabs[4], "Milestone 6", diffusion_manifest),
-]:
-    with tab:
+@st.cache_data(show_spinner=False)
+def build_similarity_index(products: pd.DataFrame, max_rows: int = 5000):
+    base = products.copy()
+    if len(base) > max_rows:
+        base = base.sample(max_rows, random_state=42)
+    base["similarity_text"] = base.apply(product_text, axis=1).fillna("")
+    vectorizer = TfidfVectorizer(max_features=8000, stop_words="english", ngram_range=(1, 2))
+    matrix = vectorizer.fit_transform(base["similarity_text"])
+    return base.reset_index(drop=True), vectorizer, matrix
+
+
+def find_report(*relative_paths: str) -> pd.DataFrame | None:
+    for rel in relative_paths:
+        frame = load_csv_safe(PROJECT_ROOT / rel)
         if frame is not None:
-            st.dataframe(frame, use_container_width=True)
+            return frame
+    return None
+
+
+def image_source(row: pd.Series):
+    cached_path = resolve_path(row.get("cached_image_path"))
+    if cached_path and cached_path.exists():
+        return cached_path
+    image_url = row.get("primary_image_url")
+    if not pd.isna(image_url) and str(image_url).startswith(("http://", "https://")):
+        return str(image_url)
+    return None
+
+
+def show_product_image(row: pd.Series, caption: str | None = None) -> None:
+    source = image_source(row)
+    if source:
+        st.image(source, caption=caption, width="stretch")
+    else:
+        st.warning("Product image artifact not found. Run Milestone 0 image caching first.")
+
+
+def show_dataframe_or_warning(frame: pd.DataFrame | None, message: str) -> None:
+    if frame is None or frame.empty:
+        st.warning(message)
+    else:
+        st.dataframe(frame, width="stretch")
+
+
+def select_product(products: pd.DataFrame) -> pd.Series | None:
+    st.subheader("Product Selector")
+    if products.empty:
+        st.warning("Product data is empty. Run Milestone 0 first.")
+        return None
+
+    selector_df = products.dropna(subset=["product_id"]).copy()
+    if len(selector_df) > 1000:
+        selector_df = selector_df.sample(1000, random_state=42)
+    selector_df = selector_df.sort_values("product_title", na_position="last").reset_index(drop=True)
+    selector_df["label"] = selector_df.apply(
+        lambda row: f"{display_value(row.get('product_title'), 'Untitled product')} [{row.get('product_id')}]",
+        axis=1,
+    )
+
+    typed_id = st.text_input("Or enter a product ID", placeholder="Example: B00JQRPB9I")
+    if typed_id:
+        exact = products[products["product_id"].astype(str).str.lower() == typed_id.strip().lower()]
+        if not exact.empty:
+            return exact.iloc[0]
+        st.warning("Product ID not found in product-level data.")
+
+    label = st.selectbox("Choose a product", selector_df["label"].tolist())
+    selected_id = selector_df.loc[selector_df["label"] == label, "product_id"].iloc[0]
+    return products[products["product_id"].astype(str) == str(selected_id)].iloc[0]
+
+
+def product_information(row: pd.Series) -> None:
+    st.subheader("Product Information")
+    left, right = st.columns([1, 2])
+    with left:
+        show_product_image(row, caption=display_value(row.get("product_title"), "Selected product"))
+    with right:
+        st.markdown(f"### {display_value(row.get('product_title'), 'Untitled product')}")
+        metrics = st.columns(4)
+        metrics[0].metric("Product ID", display_value(row.get("product_id")))
+        metrics[1].metric("Store", display_value(row.get("store_name")))
+        price = row.get("price_num")
+        metrics[2].metric("Price", "Not available" if pd.isna(price) else f"${float(price):.2f}")
+        metrics[3].metric("Avg Rating", display_value(row.get("average_rating")))
+        st.write(f"Rating number: {display_value(row.get('rating_number', row.get('review_count')))}")
+        st.write(f"Review count: {display_value(row.get('review_count'))}")
+        description = product_text(row)
+        if description:
+            st.caption(clean_snippet(description, 900))
         else:
-            st.info(f"Run the relevant notebook to create {label} outputs.")
+            st.warning("Product description/features artifact not found in product-level data.")
+
+
+def tabular_section(row: pd.Series) -> None:
+    st.subheader("Milestone 1 - Tabular Rating Prediction")
+    metrics = find_report("report/tabular_mlp_model_comparison.csv", "reports/tabular_mlp_model_comparison.csv")
+    show_dataframe_or_warning(metrics, "Tabular comparison CSV not found. Run Milestone 1 first.")
+
+    if not TABULAR_MODEL_PATH.exists():
+        st.warning("Artifact not found: models/tabular_mlp.keras. Run Milestone 1 first.")
+        return
+
+    pipeline = load_joblib_safe(TABULAR_PIPELINE_PATH)
+    label_encoder = load_joblib_safe(TABULAR_LABEL_ENCODER_PATH)
+    if pipeline is None or label_encoder is None:
+        st.warning("Live prediction requires preprocessing pipeline and label encoder artifacts.")
+        return
+
+    try:
+        pred = pipeline.predict(pd.DataFrame([row.to_dict()]))
+        proba = pipeline.predict_proba(pd.DataFrame([row.to_dict()])) if hasattr(pipeline, "predict_proba") else None
+        label = pred[0]
+        if hasattr(label_encoder, "inverse_transform") and not isinstance(label, str):
+            label = label_encoder.inverse_transform([label])[0]
+        st.success(f"Predicted rating band: {label}")
+        if proba is not None:
+            st.write(f"Confidence: {float(np.max(proba)):.3f}")
+    except Exception as exc:
+        st.warning(f"Live tabular prediction could not run with saved artifacts: {exc}")
+
+
+def vision_section(row: pd.Series) -> None:
+    st.subheader("Milestone 2 - Vision Prediction")
+    show_product_image(row)
+    metrics = find_report("report/vision_model_comparison.csv", "reports/vision_model_comparison.csv")
+    show_dataframe_or_warning(metrics, "Vision comparison CSV not found. Run Milestone 2 first.")
+
+    model_path = first_existing(VISION_MODEL_CANDIDATES)
+    if model_path is None:
+        st.warning("Vision model artifact not found. Run Milestone 2 first.")
+        return
+
+    source = image_source(row)
+    if not source or isinstance(source, str):
+        st.warning("Live vision prediction requires a locally cached product image.")
+        return
+
+    model = load_keras_model_safe(model_path)
+    if isinstance(model, Exception):
+        st.warning(f"Vision model could not be loaded: {model}")
+        return
+
+    try:
+        from PIL import Image
+
+        image = Image.open(source).convert("RGB").resize((224, 224))
+        array = np.asarray(image, dtype=np.float32)[None, ...] / 255.0
+        pred = model.predict(array, verbose=0)
+        confidence = float(np.max(pred))
+        class_id = int(np.argmax(pred))
+        label_encoder = load_joblib_safe(VISION_LABEL_ENCODER_PATH)
+        label = label_encoder.inverse_transform([class_id])[0] if label_encoder is not None else str(class_id)
+        st.success(f"Predicted visual class / rating band: {label}")
+        st.write(f"Confidence: {confidence:.3f}")
+    except Exception as exc:
+        st.warning(f"Live vision prediction could not run with saved artifacts: {exc}")
+
+
+def similar_products_section(selected: pd.Series, products: pd.DataFrame) -> None:
+    st.subheader("Milestone 3 - Similar Products")
+    if products.empty:
+        st.warning("Product-level data not found. Run Milestone 0 first.")
+        return
+
+    index_df, vectorizer, matrix = build_similarity_index(products)
+    query_text = product_text(selected)
+    if not query_text:
+        st.warning("No product text available for similarity search.")
+        return
+
+    query_vec = vectorizer.transform([query_text])
+    scores = cosine_similarity(query_vec, matrix).ravel()
+    results = index_df.copy()
+    results["similarity"] = scores
+    results = results[results["product_id"].astype(str) != str(selected.get("product_id"))]
+    results = results.sort_values("similarity", ascending=False).head(5)
+
+    for _, item in results.iterrows():
+        cols = st.columns([1, 4])
+        with cols[0]:
+            show_product_image(item)
+        with cols[1]:
+            st.markdown(f"**{display_value(item.get('product_title'), 'Untitled product')}**")
+            st.write(f"Product ID: {item.get('product_id')}")
+            st.write(f"Similarity score: {item['similarity']:.3f}")
+            price = item.get("price_num")
+            st.write("Price: Not available" if pd.isna(price) else f"Price: ${float(price):.2f}")
+
+
+def product_reviews(product_id: str, reviews: pd.DataFrame | None) -> pd.DataFrame:
+    if reviews is None or reviews.empty:
+        return pd.DataFrame()
+    return reviews[reviews["product_id"].astype(str) == str(product_id)].copy()
+
+
+def summary_section(row: pd.Series, reviews: pd.DataFrame | None) -> None:
+    st.subheader("Milestone 5 - Review Pros and Cons Summary")
+    pid = str(row.get("product_id"))
+    saved_summary = load_csv_safe(REPORTS_DIR / "milestone5_summary_examples.csv")
+    if saved_summary is not None and "product_id" in saved_summary.columns:
+        match = saved_summary[saved_summary["product_id"].astype(str) == pid]
+        if not match.empty:
+            first = match.iloc[0]
+            st.markdown("**Pros**")
+            st.write(display_value(first.get("pred_pros"), "No saved pros summary."))
+            st.markdown("**Cons**")
+            st.write(display_value(first.get("pred_cons"), "No saved cons summary."))
+            return
+
+    selected_reviews = product_reviews(pid, reviews)
+    if selected_reviews.empty:
+        st.warning("Review-level artifact not found for this product. Run Milestone 0 or Milestone 5 first.")
+        return
+
+    st.caption("Lightweight review-based fallback summary")
+    positive = selected_reviews[selected_reviews.get("rating_num", selected_reviews.get("rating", 0)) >= 4]
+    negative = selected_reviews[selected_reviews.get("rating_num", selected_reviews.get("rating", 0)) <= 2]
+    pros = positive["review_text"].dropna().map(clean_snippet).head(3).tolist()
+    cons = negative["review_text"].dropna().map(clean_snippet).head(3).tolist()
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("**Pros**")
+        if pros:
+            for text in pros:
+                st.write(f"- {text}")
+        else:
+            st.write("No clear positive review snippets found.")
+    with col2:
+        st.markdown("**Cons**")
+        if cons:
+            for text in cons:
+                st.write(f"- {text}")
+        else:
+            st.write("No clear negative review snippets found.")
+
+
+def qa_section(row: pd.Series, reviews: pd.DataFrame | None) -> None:
+    st.subheader("Milestone 5 - Grounded Buyer Q&A")
+    question = st.text_input("Ask a buyer question", placeholder="Example: Is this good for sensitive skin?")
+    if not question:
+        return
+
+    selected_reviews = product_reviews(str(row.get("product_id")), reviews)
+    if selected_reviews.empty:
+        st.warning("No review evidence found for this product.")
+        return
+
+    snippets = selected_reviews["review_text"].fillna("").astype(str)
+    snippets = snippets[snippets.str.len() > 0].head(80)
+    if snippets.empty:
+        st.warning("No usable review snippets found for this product.")
+        return
+
+    vectorizer = TfidfVectorizer(stop_words="english")
+    matrix = vectorizer.fit_transform(snippets.tolist() + [question])
+    scores = cosine_similarity(matrix[-1], matrix[:-1]).ravel()
+    top_idx = np.argsort(scores)[::-1][:3]
+    evidence = [(snippets.iloc[i], float(scores[i])) for i in top_idx if scores[i] > 0]
+    if not evidence:
+        evidence = [(snippets.iloc[0], 0.0)]
+
+    st.info("Extractive fallback answer: based only on retrieved review snippets, the safest answer is to inspect the evidence below. No unsupported facts are added.")
+    st.markdown("**Evidence snippets**")
+    for text, score in evidence:
+        st.write(f"- ({score:.3f}) {clean_snippet(text)}")
+
+
+def generated_image_section(row: pd.Series) -> None:
+    st.subheader("Milestone 6 - Generated Hero Image")
+    manifest = load_csv_safe(REPORTS_DIR / "milestone6_generated_image_manifest.csv")
+    pid = str(row.get("product_id"))
+    if manifest is not None and not manifest.empty and "product_id" in manifest.columns:
+        match = manifest[manifest["product_id"].astype(str) == pid]
+        if not match.empty:
+            image_path = resolve_path(match.iloc[0].get("generated_image_path"))
+            if image_path and image_path.exists():
+                st.image(image_path, caption="Generated hero image", width="stretch")
+                return
+
+    generated_dirs = [DATA_DIR / "generated_images", PROJECT_ROOT / "outputs" / "generated_images", REPORTS_DIR / "milestone6_generated_images"]
+    first_image = None
+    for directory in generated_dirs:
+        if directory.exists():
+            first_image = next(iter(sorted(directory.glob("*.png"))), None)
+            if first_image:
+                break
+    if first_image:
+        st.image(first_image, caption="Available generated demo image", width="stretch")
+        return
+
+    prompt = f"Product lifestyle photo of {display_value(row.get('product_title'), 'selected product')}, {clean_snippet(product_text(row), 180)}, clean e-commerce style"
+    st.warning("Diffusion generation artifact was not found. Run Milestone 6 first.")
+    st.code(prompt, language="text")
+
+
+def sidebar_status(product_data, review_data) -> None:
+    st.sidebar.title("Artifact Status")
+    tabular_metrics = first_existing([PROJECT_ROOT / "report/tabular_mlp_model_comparison.csv", PROJECT_ROOT / "reports/tabular_mlp_model_comparison.csv"])
+    vision_metrics = first_existing([PROJECT_ROOT / "report/vision_model_comparison.csv", PROJECT_ROOT / "reports/vision_model_comparison.csv"])
+    generated = any(path.exists() and any(path.glob("*.png")) for path in [DATA_DIR / "generated_images", PROJECT_ROOT / "outputs" / "generated_images", REPORTS_DIR / "milestone6_generated_images"])
+    statuses = {
+        "Product data": product_data is not None,
+        "Review data": review_data is not None,
+        "Tabular model": TABULAR_MODEL_PATH.exists(),
+        "Vision model": first_existing(VISION_MODEL_CANDIDATES) is not None,
+        "Embeddings/index": (PROCESSED_DIR / "product_text_embeddings.npy").exists() or (PROCESSED_DIR / "product_text_search_index.csv").exists(),
+        "Generated images": generated,
+        "Comparison CSVs": tabular_metrics is not None or vision_metrics is not None,
+    }
+    for name, ok in statuses.items():
+        st.sidebar.write(f"{'OK' if ok else 'Missing'} - {name}")
+
+
+product_path = first_existing(PRODUCT_LEVEL_CANDIDATES)
+products = load_parquet_safe(product_path) if product_path else None
+reviews = load_parquet_safe(REVIEW_LEVEL_PATH)
+sidebar_status(products, reviews)
+
+st.title("Smart Product Intelligence Demo")
+st.caption("Milestone 7 capstone demo for Amazon Reviews 2023 - All_Beauty")
+
+if products is None:
+    st.warning("Artifact not found: product-level parquet. Run Milestone 0 first.")
+    st.stop()
+
+selected_product = select_product(products)
+if selected_product is None:
+    st.stop()
+
+product_information(selected_product)
+st.divider()
+tabular_section(selected_product)
+st.divider()
+vision_section(selected_product)
+st.divider()
+similar_products_section(selected_product, products)
+st.divider()
+summary_section(selected_product, reviews)
+st.divider()
+qa_section(selected_product, reviews)
+st.divider()
+generated_image_section(selected_product)
